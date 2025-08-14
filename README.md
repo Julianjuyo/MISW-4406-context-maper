@@ -1,28 +1,109 @@
 ![Context Mapper](https://raw.githubusercontent.com/wiki/ContextMapper/context-mapper-dsl/logo/cm-logo-github-small.png)
-# Demostración de Context Mapper para el IDE en línea
-[![Build](https://github.com/ContextMapper/web-ide-demo/actions/workflows/build.yml/badge.svg)](https://github.com/ContextMapper/web-ide-demo/actions) [![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://github.com/codespaces/new?hide_repo_select=true&repo=ContextMapper/web-ide-demo) [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+## Context Maps: Alpes Partners
 
-Bienvenido al repositorio de demostración de Context Mapper. Aquí se ilustra cómo puedes configurar tu propio repositorio para utilizar Context Mapper en el IDE en línea de GitHub Codespaces.
+### Integrantes
 
-## Comienza a utilizar Context Mapper ahora
-Inicia el Codespace y usa Context Mapper de inmediato:
+| Nombre                                 | Correo                       |
+|----------------------------------------|------------------------------|
+| Miguel Fernando Padilla Espino         | m.padillae@uniandes.edu.co   |
+| Johann Sebastian Páez Campos           | js.paezc1@uniandes.edu.co    |
+| Julián Esteban Oliveros Forero         | je.oliverosf@uniandes.edu.co |
 
-<a href="https://github.com/codespaces/new?hide_repo_select=true&repo=ContextMapper/web-ide-demo" style="padding: 10px;">
-    <img src="https://github.com/codespaces/badge.svg" width="150" alt="Push" align="center">
-</a>
-<br/><br/>
+---
 
-## Abre el archivo de demostración
-En la carpeta `src/main/cml` encontrarás un pequeño **[demo en CML](./src/main/cml/demo.cml)** (aplicación de ejemplo DDD) con el que puedes empezar a familiarizarte con nuestro DSL y nuestras herramientas.
-Puedes encontrar más información sobre la herramienta y la documentación completa en nuestro sitio web [https://contextmapper.org/](https://contextmapper.org/).
+### Estructura
+```
+📦 Alpes Partners
+├── 📁 .devcontainer # Configuración para correr el proyecto en Codespaces o en local usando Codespaces.
+├── 📁 gradle/wrapper # Archivos de configuración de Gradle Wrapper.
+├── 📁 src-gen # Imágenes de los modelos generados (AS-IS y TO-BE).
+├── 📁 src/main/cml # Modelos en CML (AS-IS y TO-BE).
+├── 📄 .gitignore # Archivo para excluir ficheros del control de versiones.
+├── 📄 README.md # Documento de documentación del proyecto (usted está aquí).
+├── 📄 build.gradle # Archivo de configuración principal de Gradle.
+├── 📄 gradle.properties # Propiedades de Gradle.
+├── 📄 gradlew # Script de Gradle Wrapper para Unix.
+├── 📄 gradlew.bat # Script de Gradle Wrapper para Windows.
+└── 📄 settings.gradle # Configuración de Gradle para el proyecto.
+```
 
-## Crea tu propio repositorio de mapeo de contextos
-Puedes hacer un fork de este repositorio y hacer clic en el botón de arriba para iniciar el Codespace para tu repo.
+---
 
-## Enlaces útiles
+### Instrucciones
+1. asdasd
+2. asdasd
 
- * [Más modelos de ejemplo](https://github.com/ContextMapper/context-mapper-examples)
- * [Referencia del lenguaje CML](https://contextmapper.org/docs/language-reference/)
- * [Tutorial de prototipado rápido](https://contextmapper.org/docs/rapid-ooad/)
- * [Refactorizaciones arquitectónicas](https://contextmapper.org/docs/architectural-refactorings/)
- * [Generadores](https://contextmapper.org/docs/generators/)
+---
+
+### AS-IS
+En el estado actual (AS-IS), el dominio **Gestión de Asociaciones Estratégicas** está compuesto por cuatro subdominios núcleo. Actualmente, existe acoplamiento mediante **Shared Kernel** entre algunos contextos, lo que puede generar problemas de escalabilidad y evolución.
+
+**Archivo:** `src/main/cml/Alpes_Partners_AS-IS.cml`
+
+#### Dominio
+- **Gestión de Asociaciones Estratégicas**  
+  **Vision Statement:** "Consolidar la plataforma líder a nivel global para conectar, gestionar y escalar relaciones estratégicas entre marcas y socios, maximizando el valor mutuo y el retorno de inversión."
+
+#### Subdominios
+
+| Subdominio                  | Líneas  | Tipo   | Vision Statement |
+|-----------------------------|---------|--------|------------------|
+| MarketingAfiliados          | 3-5     | Núcleo | Impulsar las ventas y el reconocimiento de marca mediante la automatización y optimización de programas de afiliación altamente medibles. |
+| MarketingInfluencers        | 6-8     | Núcleo | Facilitar conexiones auténticas entre marcas y audiencias a través de creadores verificados, maximizando el impacto y la relevancia. |
+| ProgramasLealtad            | 9-11    | Núcleo | Transformar clientes y empleados en embajadores activos, amplificando la voz de la marca con testimonios y recomendaciones genuinas. |
+| GestionAlianzas   | 12-14   | Núcleo | Proveer un hub centralizado para administrar el ciclo de vida completo de las relaciones comerciales, desde la negociación hasta el pago y cumplimiento. |
+
+#### Contextos acotados
+- **ContextoAfiliados** → Implementa *MarketingAfiliados* (líneas 17-19)  
+- **ContextoInfluencers** → Implementa *MarketingInfluencers* (líneas 21-23)  
+- **ContextoLealtad** → Implementa *ProgramasLealtad* (líneas 25-27)  
+- **ContextoAlianzas** → Implementa *GestionAlianzas* (líneas 29-31)  
+
+#### Relaciones (Context Map)
+**Líneas:** 33-50  
+- ContextoAfiliados [SK] ↔ [SK] ContextoInfluencers  
+- ContextoLealtad [D] ← [U] ContextoAlianzas  
+- ContextoAfiliados [D] ← [U] ContextoAlianzas  
+- ContextoInfluencers [D] ← [U] ContextoAlianzas  
+
+#### Imagen del modelo AS-IS
+<img width="2000" height="1029" alt="image" src="https://github.com/user-attachments/assets/511708dd-16ce-48f7-a9c4-16de0ac5a0ee" />
+
+---
+
+### TO-BE
+En el estado futuro (TO-BE), se refina el lenguaje ubicuo y se eliminan anti-patrones como el **Shared Kernel**. Las relaciones usan **OHS**, **PL** y **ACL** para garantizar comunicación clara y modelos internos desacoplados.
+
+**Archivo:** `src/main/cml/Alpes_Partners_TO-BE.cml`
+
+#### Dominio
+- **Gestión de Asociaciones Estratégicas**  
+  **Vision Statement:** "Plataforma modular y escalable que conecta marcas con socios estratégicos para gestionar el ciclo de vida completo de programas de afiliación, marketing de influencers, lealtad y alianzas, garantizando integraciones claras y desacopladas."
+
+#### Subdominios
+
+| Subdominio              | Líneas  | Tipo   | Vision Statement |
+|-------------------------|---------|--------|------------------|
+| AfiliacionDigital       | 3-5     | Núcleo | Automatizar el reclutamiento, seguimiento y pago de afiliados con métricas precisas y procesos estandarizados. |
+| InfluencerEngagement    | 6-8     | Núcleo | Conectar marcas con creadores relevantes mediante flujos de campaña claros, seguimiento de impacto y pagos transparentes. |
+| ProgramasLealtad         | 9-11    | Núcleo | Potenciar a clientes y empleados como embajadores, maximizando su contribución mediante incentivos y contenido auténtico. |
+| GestionAlianzas      | 12-14   | Núcleo | Orquestar contratos, términos, cumplimiento y pagos para cualquier tipo de socio estratégico. |
+
+#### Contextos acotados
+- **BC_Afiliacion** → Implementa *AfiliacionDigital* (líneas 17-19)  
+- **BC_Influencers** → Implementa *InfluencerEngagement* (líneas 21-23)  
+- **BC_Lealtad** → Implementa *ProgramasLealtad* (líneas 25-27)  
+- **BC_Alianzas** → Implementa *GestionAlianzas* (líneas 29-31)  
+
+#### Relaciones (Context Map)
+**Líneas:** 33-53  
+- BC_Afiliacion [OHS, PL] → BC_Alianzas  
+- BC_Influencers [OHS, PL] → BC_Alianzas  
+- BC_Lealtad [ACL] ← BC_Alianzas  
+- BC_Afiliacion [ACL] ← BC_Alianzas  
+- BC_Influencers [ACL] ← BC_Alianzas  
+
+#### Imagen del modelo TO-BE
+<img width="2000" height="1311" alt="image" src="https://github.com/user-attachments/assets/40c473eb-50dd-4639-86be-9ec31d31605d" />
+
+
