@@ -48,19 +48,19 @@ En el estado actual (AS-IS), el dominio **Gestión de Asociaciones Estratégicas
 
 | Subdominio                  | Líneas  | Tipo   | Vision Statement |
 |-----------------------------|---------|--------|------------------|
-| MarketingAfiliados          | 3-5     | Núcleo | Impulsar las ventas y el reconocimiento de marca mediante la automatización y optimización de programas de afiliación altamente medibles. |
-| MarketingInfluencers        | 6-8     | Núcleo | Facilitar conexiones auténticas entre marcas y audiencias a través de creadores verificados, maximizando el impacto y la relevancia. |
-| ProgramasLealtad            | 9-11    | Núcleo | Transformar clientes y empleados en embajadores activos, amplificando la voz de la marca con testimonios y recomendaciones genuinas. |
-| GestionAlianzas   | 12-14   | Núcleo | Proveer un hub centralizado para administrar el ciclo de vida completo de las relaciones comerciales, desde la negociación hasta el pago y cumplimiento. |
+| MarketingAfiliados          | 3-6     | Núcleo | Impulsar las ventas y el reconocimiento de marca mediante la automatización y optimización de programas de afiliación altamente medibles. |
+| MarketingInfluencers        | 7-10     | Núcleo | Facilitar conexiones auténticas entre marcas y audiencias a través de creadores verificados, maximizando el impacto y la relevancia. |
+| ProgramasLealtad            | 11-14    | Núcleo | Transformar clientes y empleados en embajadores activos, amplificando la voz de la marca con testimonios y recomendaciones genuinas. |
+| GestionAlianzas   | 15-18   | Núcleo | Proveer un hub centralizado para administrar el ciclo de vida completo de las relaciones comerciales, desde la negociación hasta el pago y cumplimiento. |
 
 #### Contextos acotados
-- **ContextoAfiliados** → Implementa *MarketingAfiliados* (líneas 17-19)  
-- **ContextoInfluencers** → Implementa *MarketingInfluencers* (líneas 21-23)  
-- **ContextoLealtad** → Implementa *ProgramasLealtad* (líneas 25-27)  
-- **ContextoAlianzas** → Implementa *GestionAlianzas* (líneas 29-31)  
+- **ContextoAfiliados** → Implementa *MarketingAfiliados* (líneas 20-21)  
+- **ContextoInfluencers** → Implementa *MarketingInfluencers* (líneas 22-23)  
+- **ContextoLealtad** → Implementa *ProgramasLealtad* (líneas 24-25)  
+- **ContextoAlianzas** → Implementa *GestionAlianzas* (líneas 26-27)  
 
 #### Relaciones (Context Map)
-**Líneas:** 33-50  
+**Líneas:** 35-38 
 - ContextoAfiliados [SK] ↔ [SK] ContextoInfluencers  
 - ContextoLealtad [D] ← [U] ContextoAlianzas  
 - ContextoAfiliados [D] ← [U] ContextoAlianzas  
@@ -78,25 +78,25 @@ En el estado futuro (TO-BE), se refina el lenguaje ubicuo y se eliminan anti-pat
 
 #### Dominio
 - **Gestión de Asociaciones Estratégicas**  
-  **Vision Statement:** "Plataforma modular y escalable que conecta marcas con socios estratégicos para gestionar el ciclo de vida completo de programas de afiliación, marketing de influencers, lealtad y alianzas, garantizando integraciones claras y desacopladas."
+  **Vision Statement:** "Plataforma flexible que conecta marcas con socios estratégicos para gestionar programas de afiliación, marketing con influencers, lealtad y alianzas, con integraciones claras y sin confusiones."
 
 #### Subdominios
 
 | Subdominio              | Líneas  | Tipo   | Vision Statement |
 |-------------------------|---------|--------|------------------|
-| AfiliacionDigital       | 3-5     | Núcleo | Automatizar el reclutamiento, seguimiento y pago de afiliados con métricas precisas y procesos estandarizados. |
-| InfluencerEngagement    | 6-8     | Núcleo | Conectar marcas con creadores relevantes mediante flujos de campaña claros, seguimiento de impacto y pagos transparentes. |
-| ProgramasLealtad         | 9-11    | Núcleo | Potenciar a clientes y empleados como embajadores, maximizando su contribución mediante incentivos y contenido auténtico. |
-| GestionAlianzas      | 12-14   | Núcleo | Orquestar contratos, términos, cumplimiento y pagos para cualquier tipo de socio estratégico. |
+| AfiliacionDigital       | 3-6     | Núcleo | Automatizar el reclutamiento, seguimiento y pago de afiliados con métricas precisas y procesos estandarizados. |
+| InfluencerEngagement    | 7-10     | Núcleo | Conectar marcas con creadores relevantes mediante flujos de campaña claros, seguimiento de impacto y pagos transparentes. |
+| ProgramasLealtad         | 11-14    | Núcleo | Potenciar a clientes y empleados como embajadores, maximizando su contribución mediante incentivos y contenido auténtico. |
+| GestionAlianzas      | 15-18   | Núcleo | Orquestar contratos, términos, cumplimiento y pagos para cualquier tipo de socio estratégico. |
 
 #### Contextos acotados
-- **BC_Afiliacion** → Implementa *AfiliacionDigital* (líneas 17-19)  
-- **BC_Influencers** → Implementa *InfluencerEngagement* (líneas 21-23)  
-- **BC_Lealtad** → Implementa *ProgramasLealtad* (líneas 25-27)  
-- **BC_Alianzas** → Implementa *GestionAlianzas* (líneas 29-31)  
+- **BC_Afiliacion** → Implementa *AfiliacionDigital* (líneas 20-21)  
+- **BC_Influencers** → Implementa *InfluencerEngagement* (líneas 22-23)  
+- **BC_Lealtad** → Implementa *ProgramasLealtad* (líneas 24-25)  
+- **BC_Alianzas** → Implementa *GestionAlianzas* (líneas 26-27)  
 
 #### Relaciones (Context Map)
-**Líneas:** 33-53  
+**Líneas:** 35-39  
 - BC_Afiliacion [OHS, PL] → BC_Alianzas  
 - BC_Influencers [OHS, PL] → BC_Alianzas  
 - BC_Lealtad [ACL] ← BC_Alianzas  
