@@ -1,0 +1,59 @@
+Domain GestionAsociacionesEstrategicas {
+  domainVisionStatement = "Plataforma modular y escalable que conecta marcas con socios estratégicos para gestionar el ciclo de vida completo de programas de afiliación, marketing de influencers, lealtad y alianzas, garantizando integraciones claras y desacopladas."
+  Subdomain AfiliacionDigital {
+    type = CORE_DOMAIN
+    domainVisionStatement = "Automatizar el reclutamiento, seguimiento y pago de afiliados con métricas precisas y procesos estandarizados."
+  }
+  Subdomain InfluencerEngagement {
+    type = CORE_DOMAIN
+    domainVisionStatement = "Conectar marcas con creadores relevantes mediante flujos de campaña claros, seguimiento de impacto y pagos transparentes."
+  }
+  Subdomain LoyaltyAdvocacy {
+    type = CORE_DOMAIN
+    domainVisionStatement = "Potenciar a clientes y empleados como embajadores, maximizando su contribución mediante incentivos y contenido auténtico."
+  }
+  Subdomain AllianceManagement {
+    type = CORE_DOMAIN
+    domainVisionStatement = "Orquestar contratos, términos, cumplimiento y pagos para cualquier tipo de socio estratégico."
+  }
+}
+BoundedContext BC_Afiliacion implements AfiliacionDigital {
+}
+BoundedContext BC_Influencers implements InfluencerEngagement {
+}
+BoundedContext BC_Loyalty implements LoyaltyAdvocacy {
+}
+BoundedContext BC_Alianzas implements AllianceManagement {
+}
+ContextMap GestionAsociacionesEstrategicas_TO_BE {
+	state = TO_BE
+	contains BC_Afiliacion
+	contains BC_Influencers
+	contains BC_Loyalty
+	contains BC_Alianzas
+	/*
+	 * Diseño TO-BE:
+	 * - Sin Shared Kernel
+	 * - Comunicación desacoplada mediante OHS y PL
+	 * - Integraciones protegidas con ACL para evitar contaminación del modelo
+	 */
+	// Afiliación publica un lenguaje estándar para que otros consuman métricas de performance
+	BC_Afiliacion [OHS, PL] -> BC_Alianzas
+	// Influencers publica su lenguaje para compartir métricas de campañas y engagement
+	BC_Influencers [OHS, PL] -> BC_Alianzas
+	// Loyalty obtiene contratos y reglas desde Alliance Management usando ACL
+	BC_Loyalty [ACL] <- BC_Alianzas
+	// Afiliación obtiene reglas de pago desde Alliance Management usando ACL
+	BC_Afiliacion [ACL] <- BC_Alianzas
+	// Influencers obtiene contratos desde Alliance Management usando ACL
+	BC_Influencers [ACL] <- BC_Alianzas
+}
+
+
+
+
+
+
+
+
+

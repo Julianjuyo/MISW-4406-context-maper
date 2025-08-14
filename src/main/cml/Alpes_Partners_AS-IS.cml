@@ -1,0 +1,47 @@
+Domain GestionAsociacionesEstrategicas {
+  domainVisionStatement = "Consolidar la plataforma líder a nivel global para conectar, gestionar y escalar relaciones estratégicas entre marcas y socios, maximizando el valor mutuo y el retorno de inversión."
+  Subdomain MarketingAfiliados {
+    type = CORE_DOMAIN
+    domainVisionStatement = "Impulsar las ventas y el reconocimiento de marca mediante la automatización y optimización de programas de afiliación altamente medibles."
+  }
+  Subdomain MarketingInfluencers {
+    type = CORE_DOMAIN
+    domainVisionStatement = "Facilitar conexiones auténticas entre marcas y audiencias a través de creadores verificados, maximizando el impacto y la relevancia."
+  }
+  Subdomain ProgramasLealtad {
+    type = CORE_DOMAIN
+    domainVisionStatement = "Transformar clientes y empleados en embajadores activos, amplificando la voz de la marca con testimonios y recomendaciones genuinas."
+  }
+  Subdomain PlataformaGestionAlianzas {
+    type = CORE_DOMAIN
+    domainVisionStatement = "Proveer un hub centralizado para administrar el ciclo de vida completo de las relaciones comerciales, desde la negociación hasta el pago y cumplimiento."
+  }
+}
+BoundedContext ContextoAfiliados implements MarketingAfiliados {
+}
+BoundedContext ContextoInfluencers implements MarketingInfluencers {
+}
+BoundedContext ContextoLealtad implements ProgramasLealtad {
+}
+BoundedContext ContextoAlianzas implements PlataformaGestionAlianzas {
+}
+ContextMap GestionAsociacionesEstrategicasMap {
+	state = AS_IS
+	contains ContextoAfiliados
+	contains ContextoInfluencers
+	contains ContextoLealtad
+	contains ContextoAlianzas
+	/*
+	 * Suposición: Contextos que requieren datos compartidos (Shared Kernel)
+	 * y relaciones de cliente/proveedor para el flujo de información.
+	 */
+	
+	// Afiliados e Influencers comparten datos de performance y métricas de campañas
+	ContextoAfiliados [SK] <-> [SK] ContextoInfluencers
+	// Programas de lealtad se nutren de la información de la gestión de alianzas
+	ContextoLealtad [D] <- [U] ContextoAlianzas
+	// Afiliados dependen de la gestión de alianzas para contratos y términos
+	ContextoAfiliados [D] <- [U] ContextoAlianzas
+	// Influencers dependen de la gestión de alianzas para contratos y términos
+	ContextoInfluencers [D] <- [U] ContextoAlianzas
+}
