@@ -12,7 +12,7 @@ Domain GestionAsociacionesEstrategicas {
     type = CORE_DOMAIN
     domainVisionStatement = "Transformar clientes y empleados en embajadores activos, amplificando la voz de la marca con testimonios y recomendaciones genuinas."
   }
-  Subdomain PlataformaGestionAlianzas {
+  Subdomain GestionAlianzas {
     type = CORE_DOMAIN
     domainVisionStatement = "Proveer un hub centralizado para administrar el ciclo de vida completo de las relaciones comerciales, desde la negociación hasta el pago y cumplimiento."
   }
@@ -23,7 +23,7 @@ BoundedContext ContextoInfluencers implements MarketingInfluencers {
 }
 BoundedContext ContextoLealtad implements ProgramasLealtad {
 }
-BoundedContext ContextoAlianzas implements PlataformaGestionAlianzas {
+BoundedContext ContextoAlianzas implements GestionAlianzas {
 }
 ContextMap GestionAsociacionesEstrategicasMap {
 	state = AS_IS

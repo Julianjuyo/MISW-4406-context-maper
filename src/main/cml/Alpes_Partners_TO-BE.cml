@@ -8,11 +8,11 @@ Domain GestionAsociacionesEstrategicas {
     type = CORE_DOMAIN
     domainVisionStatement = "Conectar marcas con creadores relevantes mediante flujos de campaña claros, seguimiento de impacto y pagos transparentes."
   }
-  Subdomain LoyaltyAdvocacy {
+  Subdomain ProgramasLealtad {
     type = CORE_DOMAIN
     domainVisionStatement = "Potenciar a clientes y empleados como embajadores, maximizando su contribución mediante incentivos y contenido auténtico."
   }
-  Subdomain AllianceManagement {
+  Subdomain GestionAlianzas {
     type = CORE_DOMAIN
     domainVisionStatement = "Orquestar contratos, términos, cumplimiento y pagos para cualquier tipo de socio estratégico."
   }
@@ -21,15 +21,15 @@ BoundedContext BC_Afiliacion implements AfiliacionDigital {
 }
 BoundedContext BC_Influencers implements InfluencerEngagement {
 }
-BoundedContext BC_Loyalty implements LoyaltyAdvocacy {
+BoundedContext BC_Lealtad implements ProgramasLealtad {
 }
-BoundedContext BC_Alianzas implements AllianceManagement {
+BoundedContext BC_Alianzas implements GestionAlianzas {
 }
 ContextMap GestionAsociacionesEstrategicas_TO_BE {
 	state = TO_BE
 	contains BC_Afiliacion
 	contains BC_Influencers
-	contains BC_Loyalty
+	contains BC_Lealtad
 	contains BC_Alianzas
 	/*
 	 * Diseño TO-BE:
@@ -42,7 +42,7 @@ ContextMap GestionAsociacionesEstrategicas_TO_BE {
 	// Influencers publica su lenguaje para compartir métricas de campañas y engagement
 	BC_Influencers [OHS, PL] -> BC_Alianzas
 	// Loyalty obtiene contratos y reglas desde Alliance Management usando ACL
-	BC_Loyalty [ACL] <- BC_Alianzas
+	BC_Lealtad [ACL] <- BC_Alianzas
 	// Afiliación obtiene reglas de pago desde Alliance Management usando ACL
 	BC_Afiliacion [ACL] <- BC_Alianzas
 	// Influencers obtiene contratos desde Alliance Management usando ACL
