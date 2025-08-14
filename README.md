@@ -30,8 +30,33 @@
 ---
 
 ### Instrucciones
-1. asdasd
-2. asdasd
+1️⃣ Requisitos
+* Instalar Docker
+* Instalar Visual Studio Code
+* Instalar la extensión “Dev Containers” en Visual Studio Code
+
+2️⃣ Descomprimir el proyecto
+* Localiza el archivo .zip que contiene tu proyecto con la carpeta .devcontainer/.
+* Descomprímelo en una ubicación de tu preferencia.
+
+
+3️⃣ Abrir el proyecto en un Dev Container
+* Abre VS Code.
+* Ve a Archivo → Abrir carpeta y selecciona la carpeta del proyecto descomprimida.
+* Cuando VS Code detecte .devcontainer/, te aparecerá una notificación:
+* Haz clic en "Reopen in Container".
+<img width="465" height="114" alt="image" src="https://github.com/user-attachments/assets/ac5547db-f027-45ab-9956-31a6e865e90c" />
+
+* Si no aparece, presiona F1 → busca "Dev Containers: Reopen in Container" y selecciónalo.
+<img width="602" height="585" alt="image (1)" src="https://github.com/user-attachments/assets/446b9841-7892-4971-b1c5-b2a828877229" />
+
+* Espera a que el contenedor se construya (puede tardar la primera vez porque descarga dependencias).
+
+
+4️⃣ Generar los modelos CML
+* Abrir el modelo CML y dar click derecho > Generar Context Map
+* Los modelos serán generados: en src-gen/
+
 
 ---
 
