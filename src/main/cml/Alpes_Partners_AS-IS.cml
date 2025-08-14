@@ -31,17 +31,9 @@ ContextMap GestionAsociacionesEstrategicasMap {
 	contains ContextoInfluencers
 	contains ContextoLealtad
 	contains ContextoAlianzas
-	/*
-	 * Suposición: Contextos que requieren datos compartidos (Shared Kernel)
-	 * y relaciones de cliente/proveedor para el flujo de información.
-	 */
 	
-	// Afiliados e Influencers comparten datos de performance y métricas de campañas
 	ContextoAfiliados [SK] <-> [SK] ContextoInfluencers
-	// Programas de lealtad se nutren de la información de la gestión de alianzas
 	ContextoLealtad [D] <- [U] ContextoAlianzas
-	// Afiliados dependen de la gestión de alianzas para contratos y términos
 	ContextoAfiliados [D] <- [U] ContextoAlianzas
-	// Influencers dependen de la gestión de alianzas para contratos y términos
 	ContextoInfluencers [D] <- [U] ContextoAlianzas
 }

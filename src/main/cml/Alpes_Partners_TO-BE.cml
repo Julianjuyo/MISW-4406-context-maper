@@ -31,21 +31,11 @@ ContextMap GestionAsociacionesEstrategicas_TO_BE {
 	contains BC_Influencers
 	contains BC_Lealtad
 	contains BC_Alianzas
-	/*
-	 * Diseño TO-BE:
-	 * - Sin Shared Kernel
-	 * - Comunicación desacoplada mediante OHS y PL
-	 * - Integraciones protegidas con ACL para evitar contaminación del modelo
-	 */
-	// Afiliación publica un lenguaje estándar para que otros consuman métricas de performance
+
 	BC_Afiliacion [OHS, PL] -> BC_Alianzas
-	// Influencers publica su lenguaje para compartir métricas de campañas y engagement
 	BC_Influencers [OHS, PL] -> BC_Alianzas
-	// Loyalty obtiene contratos y reglas desde Alliance Management usando ACL
 	BC_Lealtad [ACL] <- BC_Alianzas
-	// Afiliación obtiene reglas de pago desde Alliance Management usando ACL
 	BC_Afiliacion [ACL] <- BC_Alianzas
-	// Influencers obtiene contratos desde Alliance Management usando ACL
 	BC_Influencers [ACL] <- BC_Alianzas
 }
 
