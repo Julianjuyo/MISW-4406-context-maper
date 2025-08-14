@@ -36,7 +36,7 @@
 * Instalar la extensión “Dev Containers” en Visual Studio Code
 
 2️⃣ Descomprimir el proyecto
-* Localiza el archivo .zip que contiene tu proyecto con la carpeta .devcontainer/.
+* Localiza el archivo .zip entregado por le grupo que contiene la carpeta .devcontainer/.
 * Descomprímelo en una ubicación de tu preferencia.
 
 
@@ -54,7 +54,7 @@
 
 
 4️⃣ Generar los modelos CML
-* Abrir el modelo CML y dar click derecho > Generar Context Map
+* Abrir el modelo CML y dar click derecho > Generate Graphical Context Map
 * Los modelos serán generados: en src-gen/
 
 
