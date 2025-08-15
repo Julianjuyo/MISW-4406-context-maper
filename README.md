@@ -44,11 +44,11 @@
 * Abre VS Code.
 * Ve a Archivo → Abrir carpeta y selecciona la carpeta del proyecto descomprimida.
 * Cuando VS Code detecte .devcontainer/, te aparecerá una notificación:
-* Haz clic en "Reopen in Container".
-<img width="465" height="114" alt="image" src="https://github.com/user-attachments/assets/ac5547db-f027-45ab-9956-31a6e865e90c" />
+* Haz clic en "Reopen in Container".  
+  <img width="465" height="114" alt="image" src="https://github.com/user-attachments/assets/ac5547db-f027-45ab-9956-31a6e865e90c" />
 
-* Si no aparece, presiona F1 → busca "Dev Containers: Reopen in Container" y selecciónalo.
-<img width="602" height="585" alt="image (1)" src="https://github.com/user-attachments/assets/446b9841-7892-4971-b1c5-b2a828877229" />
+* Si no aparece, presiona F1 → busca "Dev Containers: Reopen in Container" y selecciónalo.  
+  <img width="602" height="585" alt="image (1)" src="https://github.com/user-attachments/assets/446b9841-7892-4971-b1c5-b2a828877229" />
 
 * Espera a que el contenedor se construya (puede tardar la primera vez porque descarga dependencias).
 
@@ -140,7 +140,13 @@ En el estado futuro (TO-BE), se refina el lenguaje ubicuo y se eliminan anti-pat
 https://miro.com/app/board/uXjVJUY9g3E=/
 
 #### Marketing de afiliados: AS-IS
+`lenguaje-ubicuo/BigPicture - Marketing de afiliados_ AS-IS.jpg`
+<img width="2833" height="1411" alt="image" src="https://github.com/user-attachments/assets/92623ef4-647f-488b-b837-c308186378c1" />
 
 
 #### Marketing de afiliados: TO-BE
+`lenguaje-ubicuo/BigPicture - Marketing de afiliados_ TO-BE.jpg`
+<img width="2968" height="1347" alt="image" src="https://github.com/user-attachments/assets/7a5b4c74-afb9-4d3a-8c94-e8a5c9b242db" />
 
+#### Nomenclatura utilizada
+<img width="1391" height="744" alt="Captura de pantalla 2025-08-14 a la(s) 23 08 21" src="https://github.com/user-attachments/assets/4d3c9770-ba3a-4b7f-8ce0-efe4078d0eb7" />
