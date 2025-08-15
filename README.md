@@ -132,3 +132,15 @@ En el estado futuro (TO-BE), se refina el lenguaje ubicuo y se eliminan anti-pat
 <img width="2000" height="1311" alt="image" src="https://github.com/user-attachments/assets/40c473eb-50dd-4639-86be-9ec31d31605d" />
 
 
+---
+
+### Lenguaje Ubicuo
+
+#### Enlace al Miro
+https://miro.com/app/board/uXjVJUY9g3E=/
+
+#### Marketing de afiliados: AS-IS
+
+
+#### Marketing de afiliados: TO-BE
+
